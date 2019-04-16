@@ -70,6 +70,14 @@ set(TEST_MAIN unit_tests.x)  # Default name for test executable (change if you w
 # Compile all sources into a library. Called engine here (change if you wish).
 add_library( engine ${SOURCES} )
 
+file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/app/firefoxCSSFrame.txt"
+     DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
+file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/app/keywords.txt"
+     DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
+file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/app/level.txt"
+     DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 # Add an executable for the file main.cpp, here called main.x.
 # If you add more executables, copy these three lines accordingly.
 
@@ -81,6 +89,9 @@ add_executable(test1.x app/test1.cpp)   # Name of exec. and location of file.
 add_dependencies(test1.x engine)        # engine is the library built from src/*.cpp
 target_link_libraries(test1.x engine)   # Link the executable to the 'engine'.
 
+add_executable(test2.x app/test2.cpp)   # Name of exec. and location of file.
+add_dependencies(test2.x engine)        # engine is the library built from src/*.cpp
+target_link_libraries(test2.x engine)   # Link the executable to the 'engine'.
 # --------------------------------------------------------------------------------
 #                         Make Tests (no change needed).
 # --------------------------------------------------------------------------------
