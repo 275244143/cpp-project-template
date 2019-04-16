@@ -15,7 +15,6 @@ int main() {
 
 string GetLine() {
     string result;
-    //cout << "Please, enter a real number: ";
     getline(cin, result);
 
     return result;
