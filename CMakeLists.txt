@@ -72,11 +72,14 @@ add_library( engine ${SOURCES} )
 
 # Add an executable for the file main.cpp, here called main.x.
 # If you add more executables, copy these three lines accordingly.
+
 add_executable(main.x app/main.cpp)   # Name of exec. and location of file.
 add_dependencies(main.x engine)       # main.cpp uses the 'engine', add dep.
 target_link_libraries(main.x engine)  # Link the executable to the 'engine'.
 
-
+add_executable(test1.x app/test1.cpp)   # Name of exec. and location of file.
+add_dependencies(test1.x engine)        # engine is the library built from src/*.cpp
+target_link_libraries(test1.x engine)   # Link the executable to the 'engine'.
 
 # --------------------------------------------------------------------------------
 #                         Make Tests (no change needed).
