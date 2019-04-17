@@ -92,6 +92,10 @@ target_link_libraries(test1.x engine)   # Link the executable to the 'engine'.
 add_executable(test2.x app/test2.cpp)   # Name of exec. and location of file.
 add_dependencies(test2.x engine)        # engine is the library built from src/*.cpp
 target_link_libraries(test2.x engine)   # Link the executable to the 'engine'.
+
+add_executable(IsEmailAddress.x app/CheckEmailAddress.cpp)   # Name of exec. and location of file.
+add_dependencies(IsEmailAddress.x engine)        # engine is the library built from src/*.cpp
+target_link_libraries(IsEmailAddress.x engine)   # Link the executable to the 'engine'.
 # --------------------------------------------------------------------------------
 #                         Make Tests (no change needed).
 # --------------------------------------------------------------------------------
